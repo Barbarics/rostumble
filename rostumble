@@ -17,6 +17,7 @@ local gravity = Instance.new("ImageButton")
 irostumbled.Name = "irostumbled"
 irostumbled.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 irostumbled.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+irostumbled.ResetOnSpawn=false
 
 Frame.Parent = irostumbled
 Frame.Active = true
@@ -26,7 +27,6 @@ Frame.Selectable = true
 Frame.Size = UDim2.new(0.439926058, 0, 0.78702569, 0)
 Frame.Draggable=true
 Frame.Active=true
-Frame.ResetOnSpawn=false
 
 
 UICorner.CornerRadius = UDim.new(0.0500000007, 10)
@@ -87,5 +87,5 @@ gravity.Position = UDim2.new(0.170868352, 0, 0.55365473, 0)
 gravity.Size = UDim2.new(0.70028013, 0, 0.32503888, 0)
 gravity.Image = "http://www.roblox.com/asset/?id=11029747527"
 gravity.MouseButton1Click:Connect(function()
-	workspace.Gravity=55
+	workspace.Gravity=75
 end)
