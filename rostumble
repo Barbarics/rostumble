@@ -1,0 +1,90 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local irostumbled = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local RPSTUMBLE = Instance.new("ImageLabel")
+local walkspeed = Instance.new("ImageButton")
+local noclip = Instance.new("ImageButton")
+local gravity = Instance.new("ImageButton")
+
+--Properties:
+
+irostumbled.Name = "irostumbled"
+irostumbled.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+irostumbled.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = irostumbled
+Frame.Active = true
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.279728889, 0, 0.106487148, 0)
+Frame.Selectable = true
+Frame.Size = UDim2.new(0.439926058, 0, 0.78702569, 0)
+Frame.Draggable=true
+Frame.Active=true
+
+
+UICorner.CornerRadius = UDim.new(0.0500000007, 10)
+UICorner.Parent = Frame
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 151, 23)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 80, 57))}
+UIGradient.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.10), NumberSequenceKeypoint.new(1.00, 0.10)}
+UIGradient.Parent = Frame
+
+RPSTUMBLE.Name = "RPSTUMBLE"
+RPSTUMBLE.Parent = Frame
+RPSTUMBLE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+RPSTUMBLE.BackgroundTransparency = 1.000
+RPSTUMBLE.BorderSizePixel = 0
+RPSTUMBLE.Position = UDim2.new(0.12571387, 0, -0.00082233717, 0)
+RPSTUMBLE.Size = UDim2.new(0.746498585, 0, 0.20528771, 0)
+RPSTUMBLE.Image = "http://www.roblox.com/asset/?id=11029327952"
+
+walkspeed.Name = "walkspeed"
+walkspeed.Parent = Frame
+walkspeed.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+walkspeed.BackgroundTransparency = 1.000
+walkspeed.BorderSizePixel = 0
+walkspeed.Position = UDim2.new(0.170868352, 0, 0.153965786, 0)
+walkspeed.Size = UDim2.new(0.70028013, 0, 0.32503888, 0)
+walkspeed.Image = "http://www.roblox.com/asset/?id=11029647727"
+walkspeed.MouseButton1Click:Connect(function()
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 75
+end)
+
+noclip.Name = "noclip"
+noclip.Parent = Frame
+noclip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+noclip.BackgroundTransparency = 1.000
+noclip.BorderSizePixel = 0
+noclip.Position = UDim2.new(0.134453788, 0, 0.326594114, 0)
+noclip.Size = UDim2.new(0.809523821, 0, 0.345256597, 0)
+noclip.Image = "http://www.roblox.com/asset/?id=11029698402"
+noclip.MouseButton1Click:Connect(function()
+	local runservice = game:GetService("RunService")
+
+	local player = game:GetService("Players").LocalPlayer
+	runservice.Stepped:Connect(function()
+		for i,v in pairs(player.Character:GetDescendants()) do
+			if v:IsA("BasePart") then
+				v.CanCollide = false
+			end
+		end
+	end)
+end)
+
+gravity.Name = "gravity"
+gravity.Parent = Frame
+gravity.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+gravity.BackgroundTransparency = 1.000
+gravity.BorderSizePixel = 0
+gravity.Position = UDim2.new(0.170868352, 0, 0.55365473, 0)
+gravity.Size = UDim2.new(0.70028013, 0, 0.32503888, 0)
+gravity.Image = "http://www.roblox.com/asset/?id=11029747527"
+gravity.MouseButton1Click:Connect(function()
+	workspace.Gravity=75
+end)
