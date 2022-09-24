@@ -86,5 +86,5 @@ gravity.Position = UDim2.new(0.170868352, 0, 0.55365473, 0)
 gravity.Size = UDim2.new(0.70028013, 0, 0.32503888, 0)
 gravity.Image = "http://www.roblox.com/asset/?id=11029747527"
 gravity.MouseButton1Click:Connect(function()
-	workspace.Gravity=75
+	workspace.Gravity=55
 end)
