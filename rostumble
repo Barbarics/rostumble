@@ -26,6 +26,7 @@ Frame.Selectable = true
 Frame.Size = UDim2.new(0.439926058, 0, 0.78702569, 0)
 Frame.Draggable=true
 Frame.Active=true
+Frame.ResetOnSpawn=false
 
 
 UICorner.CornerRadius = UDim.new(0.0500000007, 10)
